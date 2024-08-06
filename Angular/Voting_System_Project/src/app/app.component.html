@@ -1,0 +1,116 @@
+<body>
+  <div id="head">
+<h1>VOTING ELIGIBILITY SYSTEM</h1></div>
+ 
+<div class="over">
+ <div id="txt">
+  <b>
+    " The Vote is Precious. <br>
+    It is the most Powerful non-Violence tool <br>
+    we have in a democratic society, <br>
+    and we must use it ".
+  </b>
+ </div>
+  <div class="cont">
+<form #myForm="ngForm">
+
+  <div class="form-group">
+  <label for="cname">Enter Your Name : </label>  
+  <input type="text" 
+  class="form-control" 
+  name="fname" 
+  #fname="ngModel" ngModel 
+  required
+  pattern="[a-zA-Z]+">
+  
+</div>
+
+<div *ngIf="fname.touched">
+  <div *ngIf="fname.errors?.['required']">
+   <b style="color:brown; font-size: 17px;">Name Required.</b>
+  </div>
+  <div *ngIf="fname.errors?.['pattern']">
+    <b style="color:brown; font-size: 17px;">Invalid Name.</b>
+  </div>
+</div>
+<br>
+
+
+<div class="form-group">
+  <label for="cage">Enter your Age :  </label>
+    <input type="text" 
+    class="form-control" 
+    name="age" 
+    #age="ngModel" ngModel 
+    required
+    pattern="[0-9]+">
+ 
+</div>
+
+<div *ngIf="age.touched">
+  <div *ngIf="age.errors?.['required']">
+   <b style="color: brown; font-size: 17px;">Age Required.</b>
+  </div>
+  <div *ngIf="age.errors?.['pattern']">
+    <b style="color:brown; font-size: 17px;">Invalid Age.</b>
+  </div>
+</div>
+<br>
+
+<div class="form-group">
+  <label for="gender">Gender : </label>
+  <select name="gender" [(ngModel)]="voterList.gender">
+    <option >Male</option>
+    <option>Female</option>
+  </select>
+  <br><br>
+  </div>
+
+
+
+<div class="form-group">
+ <label for="ano"> Aadhar-card.No: </label>
+ <input type="text" 
+ class="form-control" 
+ name="aadharno" 
+ #aadharno="ngModel" ngModel 
+ required
+ pattern="[0-9]+" >
+</div>
+ 
+<div *ngIf="aadharno.touched">
+  <div *ngIf="aadharno.errors?.['required']">
+   <b style="color: brown; font-size: 17px;">Aadhar-No Required.</b>
+  </div>
+  <div *ngIf="aadharno.errors?.['pattern']">
+    <b style="color:brown;font-size: 17px;">Invalid Aadhar-No.</b>
+  </div>
+</div>
+<br>
+ 
+  <div id="btn">
+  <button (click)="insertVoter(myForm.value)">INSERT</button>
+  <button (click)="updateVoter(myForm.value)">UPDATE</button>
+  <button (click)="deleteVoter(myForm.value)">DELETE</button>
+  <br><br>
+</div>
+<div id="btn1">
+<button (click)="findVoter(myForm.value)">FIND</button>
+  <button (click)="findallVoter()">FIND ALL</button></div>
+</form>
+</div>
+</div>
+<br>
+
+<h3 style="font-size: 25px;">{{ result }}</h3>
+<br>
+<div style="width: 100%;" *ngIf="flag">
+  <table width="60%" align="center" border="1" >
+   <tr style="font-size: 20px;"><th >Aadhar-No</th><th>Name</th><th>Age</th> <th>Gender</th></tr> 
+    <tr *ngFor="let list of VoterArr" style="font-size: 20px;">
+        <td> {{list.id}} </td><td> {{list.fname}} </td><td> {{list.age}} </td><td>{{list.gender}}</td>
+    </tr>
+ </table>
+ </div>
+
+</body>

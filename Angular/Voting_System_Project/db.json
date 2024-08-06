@@ -1,0 +1,40 @@
+{
+  "voterLists": [
+    {
+      "fname": "Dheetchanaa",
+      "age": "21",
+      "gender": "Female",
+      "id": "3856"
+    },
+    {
+      "id": "1608",
+      "fname": "Ilakkiya",
+      "age": "21",
+      "gender": "Female"
+    },
+    {
+      "id": "12345",
+      "fname": "Priya",
+      "age": "23",
+      "gender": "Female"
+    },
+    {
+      "id": "6789",
+      "fname": "Anumitha",
+      "age": "21",
+      "gender": "Female"
+    },
+    {
+      "id": "0506",
+      "fname": "Karthi",
+      "age": "26",
+      "gender": "Male"
+    },
+    {
+      "id": "0504",
+      "fname": "Sanjai",
+      "age": "21",
+      "gender": "Male"
+    }
+  ]
+}
